@@ -1,0 +1,29 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:antiquewhite;
+    border-color: antiquewhite;
+    border-style: solid;
+    border-radius: 10%;
+    transition-duration: 1s;
+}
+#main{
+    width: 500px;
+    height: 500px;
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    gap:5px
+}
+.hidden{
+    visibility: hidden;
+      
+}
+.card.flipped{
+    transform: rotateY(180deg);
+}

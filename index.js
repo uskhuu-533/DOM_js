@@ -11,7 +11,7 @@ element.style.alignItems = "center"
 element.innerHTML 
 
 const element1 = document.createElement("div")
-element1.style.height = "500px"
+element1.style.height = "800px"
 element1.style.width = "400px"
 element1.style.background = "white" 
 element1.id = "element1"
@@ -31,6 +31,21 @@ input1.style.width = "100px";
 input1.type = "email"
 input1.id = "email"
 input1.innerHTML
+
+const firstName = document.createElement("p");
+firstName.innerHTML = "firstname"
+
+const firstNameInput = document.createElement("input")
+firstNameInput.style.height = "20px";
+firstNameInput.style.width = "100px"
+firstNameInput.innerHTML
+
+const lastName = document.createElement("p");
+lastName.innerHTML = "lastname"
+
+const lastNameInput = document.createElement("input");
+lastNameInput.style.height = "20px"
+lastNameInput.style.width = "100px"
 
 const input = document.createElement("input");
 input.style.height = "20px";
@@ -58,11 +73,16 @@ const signIn = document.createElement("h1");
 signIn.innerHTML = "Sign in"
 
 
+
 document.getElementById("demo").appendChild(element)
 document.getElementById("element").appendChild(element1)
 document.getElementById("element1").appendChild(signIn)
 document.getElementById("element1").appendChild(email)
 document.getElementById("element1").appendChild(input1)
+// document.getElementById("element1").appendChild(firstName)
+// document.getElementById("elemetn1").appendChild(firstNameInput)
+// document.getElementById("element1").appendChild(lastName)
+// document.getElementById("element1").appendChild(lastNameInput)
 document.getElementById("element1").appendChild(input)
 document.getElementById("element1").appendChild(pass)
 document.getElementById("element1").appendChild(input)
@@ -79,27 +99,40 @@ function myFunct(){
    console.log(x)
    console.log(y)
     
-    const data1 = 
+    const data1 = [
     {
         email : "aa",
         password : 12345678,
         age : 18,
         gender : "male"
+    },
+    {
+        email : "bb",
+        password : 87654321
+    },
+    {
+        email : "cc",
+        password : 12348765
     }
+]
 
-    if (data1.email!==y && data1.password !== x){
-        const wrong = document.createElement("div")
-        wrong.style.background = "rgb(255,0,0,0.5)"
-        wrong.style.width = "500px"
-        wrong.style.height ="200px"
-        wrong.style.color = "white"
-        wrong.style.position = "absolute"
-        wrong.style.fontSize = "300%"
-        wrong.style.display = "flex"
-        wrong.style.alignItems ="center"
-        wrong.style.justifyContent ="center"
-        wrong.innerHTML = "Wrong password !!!"
-        document.getElementById("element1").appendChild(wrong)
-        
+    for (let i = 0; i <=data1.length; i++){
+        if (data1[i].email == y && data1[i].password == x){
+            console.log(data1[i].email, data1[i].password)
+            
+        }else{
+            const wrong = document.createElement("div")
+            wrong.style.background = "rgb(255,0,0,0.5)"
+            wrong.style.width = "500px"
+            wrong.style.height ="200px"
+            wrong.style.color = "white"
+            wrong.style.position = "absolute"
+            wrong.style.fontSize = "300%"
+            wrong.style.display = "flex"
+            wrong.style.alignItems ="center"
+            wrong.style.justifyContent ="center"
+            wrong.innerHTML = "Wrong password !!!"
+            document.getElementById("element1").appendChild(wrong)
+        }
     }
 }
